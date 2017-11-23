@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width">
+  <title>Code Pad</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+  <div class="wrapper">
+    <div class="textareaWrapper">
+      <textarea class="draft" placeholder="Write something..."></textarea>
+    </div>
+  </div>
+  <ul class="menuIconList">
+    <li class="menuIconItem">
+      <img class="icon-menu icon-noteList" src="/img/slice/menu/ic_noteList.png" alt="">
+    </li>
+    <li class="menuIconItem">
+      <img class="icon-menu icon-settings" src="/img/slice/menu/ic_settings.png" alt="">
+    </li>
+  </ul>
+  <div class="noteListMenu">
+    <div class="newNote">+New</div>
+    <ul class="noteList">
+    </ul>
+  </div>
+  <a href="https://chrome.google.com/webstore/detail/codepad/nlanembjpnihooihcihdciioiefilplk" target="_blank">
+    <img class="logo" src="/img/slice/logo.png" />
+  </a>
+  <ul id="menu" class="menu">
+    <li class="menuItem groupItem active">
+      <div class="menuItem-title">Customize</div>
+      <ul class="menuItem-list">
+        <li class="menuItem-list-item groupItem">
+          <div class="menuItem-list-title">Font & Background</div>
+          <ul class="sublist">
+            <li class="sublist-item fontFamily">
+              <div class="sublist-title">Font Family</div>
+              <select class="sublist-select selector-fontFamily" name="fontFamily"></select>
+            </li>
+            <li class="sublist-item fontSize">
+              <div class="sublist-title">Font Size</div>
+              <div class="fontSize-value"><span class="fontSize-number">16</span><span class="fontSize-unit">px</span></div>
+              <div class="fontSize-flex fontSize-range">
+                <div class="fontSize-flex-item smaller">Aa</div>
+                <input type="range" value="16" name="font-size" min="10" max="30" class="fontSize-flex-item fontSize-rangeChanger">
+                <div class="fontSize-flex-item bigger">Aa</div>
+              </div>
+            </li>
+            <li class="sublist-item fontColor">
+              <div class="sublist-title" name="fontColor">Font Color</div>
+              <div class="sublist-smallTitle">Choose a color</div>
+              <ul class="colorPadWrapper">
+                <li class="colorPadItem fontColor-1 active" title="default"></li>
+                <li class="colorPadItem fontColor-2"></li>
+                <li class="colorPadItem fontColor-3"></li>
+                <li class="colorPadItem fontColor-4"></li>
+              </ul>
+              <div class="sublist-smallTitle">Or make your own color</div>
+              <div class="colorPadInputWrapper">
+                <div class="colorPadItem colorPadItem-customize fontColor-5"></div>
+                <input type="text" name="name" value="" class="colorPadInput">
+                <input type="color" name="name" class="colorPicker">
+              </div>
+            </li>
+            <li class="sublist-item backgroundColor">
+              <div class="sublist-title" name="backgroundColor">Background Color</div>
+              <div class="sublist-smallTitle">Choose a color</div>
+              <ul class="colorPadWrapper">
+                <li class="colorPadItem bgColor-1 active" title="default"></li>
+                <li class="colorPadItem bgColor-2"></li>
+                <li class="colorPadItem bgColor-3"></li>
+                <li class="colorPadItem bgColor-4"></li>
+              </ul>
+              <div class="sublist-smallTitle">Or make your own color</div>
+              <div class="colorPadInputWrapper">
+                <div class="colorPadItem colorPadItem-customize bgColor-5"></div>
+                <input type="text" name="name" value="" class="colorPadInput">
+                <input type="color" name="name" class="colorPicker">
+              </div>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li class="menuItem"></li>
+    <li class="menuItem">
+      <div class="menuItem-title saveDraftItem">Save draft<span class="shortcut-keyboard">⌘+S</span></div>
+    </li>
+    <li class="menuItem groupItem">
+      <div class="menuItem-title">Share to...</div>
+      <ul class="menuItem-list">
+        <!-- <li class="menuItem-list-item">
+          <div class="menuItem-list-title shareItem" id="toFacebook">Facebook</div>
+        </li> -->
+        <li class="menuItem-list-item">
+          <div class="menuItem-list-title shareItem" id="toTwitter">Twitter</div>
+        </li>
+      </ul>
+    </li>
+    <li class="menuItem"></li>
+    <li class="menuItem">
+      <a href="https://www.facebook.com/code.word.007/" class="menuItem-title" target="_blank" title="Leave Comments on Facebook Page">Developer</a>
+    </li>
+
+    <li class="menuItem"></li>
+    <li class="menuItem"><div class="menuItem-title disableExtensionItem">Disable Extension</div></li>
+  </ul>
+
+  <div class="messageArea">
+    <div class="wrapperFeedback">
+      <p>What do you think about our product?</p>
+      <button class="button small bad" id="rateBad">Bad</button>
+      <button class="button small good" id="rateGood">Good</button>
+      <textarea type="text" placeholder="Tell us how bad our product is..." class="inputFeedbackBad u-hide"></textarea>
+      <button class="button small submit submitFeedbackBad u-hide">Submit</button>
+    </div>
+
+    <div class="wrapperLog">
+      <!-- We have been listening to you -->
+      <p>
+        Hi there,<br><br>
+        These are the features :
+      </p>
+      <p>
+        <small class="logList">
+          - <b>Delete Button</b><br>
+          You can delete the notes<br><br>
+
+          - <b>Scrollable Note List</b><br>
+          Note List is scrollable<br><br>
+        </small>
+        Last Updates:
+        <small class="logList">
+          - <b>Draft List</b><br>
+          Now you can create multiple drafts.<br><br>
+
+          - <b>New Design</b><br>
+          <span class="logTest logTest-newDesign">Draft List and Settings</span> are placed at the left bottom for easy access.<br><br>
+
+          - <b>Protection Time</b><br>
+          Extend the protection time. Now after not using computer for 10 mins, what you wrote on code pad will be <span class="logTest logTest-blur">blurred</span>.<br><br>
+
+          - <b>Logo Position</b><br>
+          Now you can click <span class="logTest logTest-logo">logo</span> to visit our Chrome page.<br><br>
+
+          - <b>Improve Calculation</b><br>
+          Fixed the bug of calculation.<br><br>
+
+          - <b><a class="logTest logTest-FacebookPage" target="_blank" href="https://www.facebook.com/code.word.007/">Facebook Page</a></b><br>
+          Come and Follow me!<br><br>
+        </small>
+        codeword7
+      </p>
+      <div class="button small closeLog">Close</div>
+    </div>
+  </div>
+
+  <div class="popoverArea">
+
+    <div class="popoverWrapper">
+      <div class="popover feedbackPopover">
+        <h3>Your Feedback Means A Lot To Us.</h3>
+        <textarea placeholder="Please let us know what you think of our product." class="popoverFeedbackTextarea"></textarea>
+        <input type="input" class="input popoverFeedbackContact" placeholder="How can we contact you?">
+        <button class="button big submitFeedback">Submit</button>
+        <div class="closePopover" title="Close Feedback Popover">×</div>
+      </div>
+    </div>
+
+    <div class="popoverWrapper">
+      <div class="popover disableExtensionPopover">
+        <h3>Disable Extension</h3>
+        <p class="disableExtension-text">
+          1. On your browser, click <b>Menu</b> <br>
+          2. Select <b>More Tools > Extensions</b>.
+        </p>
+        <img src="/img/slice/disable_extension/choose.png" alt="" width="281" class="disableExtension-img"/>
+        <p class="disableExtension-text">
+          3. To turn off an extension, uncheck the <b>Enabled</b> box. Check the box to turn it on.
+        </p>
+        <img src="/img/slice/disable_extension/disable.png" alt="" width="451" class="disableExtension-img" />
+        <div class="closePopover" title="Close Disable Extension Popover">×</div>
+      </div>
+    </div>
+  </div>
+  <div class="toastWrapper">
+    <div class="toast success"></div>
+  </div>
+  <script src="js/bundle.js"></script>
+</body>
+</html>
